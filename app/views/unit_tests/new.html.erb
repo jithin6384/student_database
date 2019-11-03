@@ -1,0 +1,23 @@
+
+
+<%= form_for @unit_test, :locals => {:controller => 'unit_test', :action => 'create'} do |form| %>
+   <p> select subject to enter marks for respective tests out of 10 </p>
+  
+   <%= form.collection_select :test_id, @tests,:subject,:subject%>
+   <p> Please enter marks against students name </p>
+ <% @students.each_with_index do |student,index| %>
+
+  
+   <p id=<%="student_#{index+1}"%>>
+    <%= student.name %> |
+
+   <%= form.label :mark %>
+    <input type="text" name="unit_test[mark_<%=index+1%>]" id="unit_test_mark_<%=index+1%>">
+    <%= hidden_field_tag "student_id_#{index+1}", student.id %>
+  
+  </p>
+ <%end%>
+  <p>
+    <%= form.submit "submit", :id=>"submit" %>
+  </p>
+<% end %>

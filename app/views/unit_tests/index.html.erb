@@ -1,0 +1,10 @@
+<h2>Marks for students in various tests are</h2>
+
+<% @tests.each do |test| %>
+ <p>Marks for the students for the test <%=test.subject%> </p>
+ <ul>
+  <% test.unit_tests.each do |unit_test| %>
+    <li><%= unit_test.student.name %> | <%=unit_test.mark%></li>
+  <%end%>
+  </ul>
+<%end%>
