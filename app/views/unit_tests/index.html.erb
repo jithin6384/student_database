@@ -1,10 +1,12 @@
 <h2>Marks for students in various tests are</h2>
-
-<% @tests.each do |test| %>
- <p>Marks for the students for the test <%=test.subject%> </p>
- <ul>
-  <% test.unit_tests.each do |unit_test| %>
-    <li><%= unit_test.student.name %> | <%=unit_test.mark%></li>
-  <%end%>
-  </ul>
+<p>Create New <%=link_to"Students Marks",new_unit_test_path %> </p> 
+<%if  UnitTest.first.present? %>
+ <% @tests.each do |test| %>
+    <p>Marks for the students for the test <%=test.subject%> </p>
+    <ul>
+	  <% test.unit_tests.each do |unit_test| %>
+	    <li><%= unit_test.student.name %> | <%=unit_test.mark%></li>
+	  <%end%>
+    </ul>
+ <%end%>
 <%end%>

@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Steps to follow after cloning
 
-Things you may want to cover:
+* rails db:create
 
-* Ruby version
+* rails db:migrate
 
-* System dependencies
+* rails db:seed
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
+* 
 
 * ...
